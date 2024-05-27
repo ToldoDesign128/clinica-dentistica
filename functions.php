@@ -18,11 +18,6 @@ if (!function_exists('clinica_setup')) :
 		register_nav_menus(array(
 			'primary'   => __('Primary Menu', 'clinica'),
 		));
-		/**
-		 * Enable support for the following post formats:
-		 * aside, gallery, quote, image, and video
-		 */
-		add_theme_support('post-formats', array('aside', 'gallery', 'quote', 'image', 'video'));
 	}
 endif; // clinica_setup
 add_action('after_setup_theme', 'clinica_setup');
@@ -146,7 +141,7 @@ function add_theme_scripts()
 
 	wp_enqueue_script('swiper-script', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array('jquery'), 1.1, true);
 
-	wp_enqueue_script('scripts', get_template_directory_uri() . '/scripts.js', array('jquery'), 1.1, true);
+	wp_enqueue_script('main', get_template_directory_uri() . '/main.js', array('jquery'), 1.1, true);
 }
 
 add_action('wp_enqueue_scripts', 'add_theme_scripts');

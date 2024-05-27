@@ -28,6 +28,28 @@
 <body>
 
     <!-- Header -->
-    <header>
-
+    <header class="w-full flex flex-wrap justify-between items-center py-4 px-6 bg-slate-800">
+        <div class="logo">
+            <a href="#" class="text-slate-100">LOGO</a>
+        </div>
+        <div id="hamburger" class="lg:hidden block">
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="menu">
+        <?php
+                wp_nav_menu(array(
+                    'theme_location'    => 'primary',
+                    'container'         =>  false,
+                    'menu_class'        => 'flex lg:row colum flex-wrap',
+                    'orderby'           => 'menu_order',
+                    'items_wrap'        => '<ul id="%1$s" class="%2$s text-slate-100">%3$s</ul>'
+                ));
+                ?>
+        </nav>
+        <div class="cta lg:w-auto w-full">
+            <a href="#" class="lg:w-auto w-full lg:block hidden lg:my-0 my-4 py-2 px-6 bg-transparent border border-sky-100 rounded-md text-sky-100 text-center">
+                Contatti
+            </a>
+        </div>        
     </header>

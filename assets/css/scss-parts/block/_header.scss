@@ -1,0 +1,110 @@
+// Header
+header {
+    #hamburger{
+        cursor: pointer;
+        height: 3rem;
+        width: 3rem;
+        position: relative;
+
+        span{
+            position: absolute;
+            background-color: white;
+            height: 1px;
+            width: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all .6s cubic-bezier(.215, .61, .355, 1);
+        }
+        span{
+            &:first-child{
+                top: 33%;
+            }
+            &:last-child{
+                bottom: 33%;
+            }
+        }
+
+        &.hamburger-active{
+            span{
+                &:first-child{
+                    transform: translateX(-50%) rotate(45deg);
+                    top: 50%;
+                }
+                &:last-child{
+                    transform: translateX(-50%) rotate(-45deg);
+                    top: 50%;
+                    bottom: auto;
+                }
+            }   
+        }
+
+    }
+  .menu {
+    width: 100%;
+    max-height: 0;
+    overflow: clip;
+    transition: all .6s cubic-bezier(.215, .61, .355, 1);
+
+    @media #{$lg} {
+      width: auto;
+      max-height: fit-content;
+    }
+
+    ul {
+      li {
+        width: 100%;
+        padding: 1rem 0;
+        transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+        a {
+          display: block;
+          color: rgb(203 213 225);
+          position: relative;
+          overflow: hidden;
+          transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+          &::after {
+            content: "";
+            position: absolute;
+            background-color: rgb(248 250 252);
+            height: 1px;
+            width: 100%;
+            left: -100%;
+            bottom: 0;
+            transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+          }
+        }
+
+        &:hover {
+          a {
+            color: rgb(248 250 252);
+
+            &::after {
+              left: 0;
+            }
+          }
+        }
+
+        @media #{$lg} {
+          width: auto;
+          padding: 0 1rem;
+        }
+      }
+    }
+  }
+  .cta {
+    a {
+      transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+      &:hover {
+        border-color: rgb(12 74 110);
+        background-color: rgb(12 74 110);
+      }
+    }
+  }
+  .open-menu{
+    &.menu{
+        max-height: 500px;
+    }
+  }
+}

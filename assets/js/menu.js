@@ -1,4 +1,3 @@
-// Prova
 // Menu Animation
 
 jQuery( "#hamburger" ).on('click', function() {
