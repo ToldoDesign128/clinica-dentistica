@@ -112,8 +112,6 @@ add_action('init', function () {
 	}
 });
 
-
-
 // Remove the content editor from ALL pages
 add_action('admin_head', 'remove_content_editor');
 function remove_content_editor()
@@ -160,4 +158,8 @@ function theme_gsap_script(){
 add_action( 'wp_enqueue_scripts', 'theme_gsap_script' );
 
 //CPT
-// require dirname(__FILE__) . '/function-parts/cpt-prima-e-dopo.php';
+require dirname(__FILE__) . '/functions-part/cleaner-wp.php';
+
+require dirname(__FILE__) . '/functions-part/cpt-casi.php';
+require dirname(__FILE__) . '/functions-part/cpt-servizi.php';
+require dirname(__FILE__) . '/functions-part/cpt-testimonianze.php';

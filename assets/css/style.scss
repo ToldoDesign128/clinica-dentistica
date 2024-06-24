@@ -22,8 +22,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import "tailwindcss/utilities";
 
 // Utilities
+@import "/assets/css/scss-parts/utilities/reset";
 @import "/assets/css/scss-parts/utilities/device";
 
 // Block
 @import "/assets/css/scss-parts/block/footer";
+@import "/assets/css/scss-parts/block/form";
 @import "/assets/css/scss-parts/block/header";
+@import "/assets/css/scss-parts/block/swiper";

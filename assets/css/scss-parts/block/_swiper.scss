@@ -1,0 +1,24 @@
+.navigation-wrap {
+  height: auto;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media #{$lg} {
+    width: fit-content;
+  }
+}
+.swiper-button-next,
+.swiper-button-prev {
+  margin-top: auto;
+  position: unset;
+  &::after {
+    font-size: 11px;
+    color: black;
+  }
+
+  &.swiper-button-disabled {
+    opacity: 1;
+  }
+}

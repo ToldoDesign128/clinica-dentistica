@@ -1,0 +1,101 @@
+.wpcf7 {
+  p {
+    padding-top: 0.8rem;
+    border-radius: 0;
+    label {
+      font-size: 14px;
+      color: rgb(203 213 225);
+    }
+    input {
+      font-size: 18px;
+      color: white;
+      width: 100%;
+      padding: 0.6rem;
+      background-color: transparent;
+      border-bottom: 1px solid rgb(203 213 225);
+      border-radius: 0;
+
+      &:focus-visible {
+        outline: 0;
+      }
+    }
+
+    textarea {
+      width: 100%;
+      max-height: 150px;
+      background-color: transparent;
+      border-bottom: 1px solid rgb(203 213 225);
+
+      &:focus-visible {
+        outline: 0;
+      }
+    }
+
+    input[type=checkbox]{
+        margin-right: 1rem;
+        width: auto;
+    }
+
+    input[type=submit]{
+        margin-top: 1rem;
+        border-bottom: none;
+        padding: 1rem 1.4rem;
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+        font-size: 16px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 1s cubic-bezier(.215, .61, .355, 1);
+
+        &:hover{
+            background-color: #1E293B;
+            border-color: #1E293B;
+        }
+    }
+  }
+  .wpcf7-acceptance{
+    span, label{
+        display: flex;
+        align-items: center;
+    }
+
+    .wpcf7-list-item-label{
+      display: inline;
+    }
+
+    a {
+        padding-left: .3rem;
+        display: inline-block;
+        opacity: 0.8;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  
+        &::after {
+          content: "";
+          position: absolute;
+          background-color: rgb(240 249 255);
+          height: 1px;
+          width: 100%;
+          left: -100%;
+          bottom: 1px;
+          transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+  
+        @media #{$xl} {
+          &:hover {
+            opacity: 1;
+  
+            &::after {
+              left: 0;
+            }
+          }
+        }
+      }
+  }
+}
+
+.map{
+  min-height: 400px;
+}
