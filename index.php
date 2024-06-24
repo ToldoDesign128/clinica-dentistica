@@ -1,3 +1,3 @@
 <?php get_header();?>
-<div class="placeholder"></div>
+<div class="placeholder h-screen"></div>
 <?php get_footer();?>
