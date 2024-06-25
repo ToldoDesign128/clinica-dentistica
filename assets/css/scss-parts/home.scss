@@ -1,0 +1,44 @@
+#hero{
+    h1{
+        font-size: 44px;
+        font-weight: 500;
+        line-height: 1.1;
+
+        @media #{$md} {
+            font-size: 56px;
+        }
+
+        @media #{$xl} {
+            font-size: 72px;
+        }
+    }
+    h2{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.1;
+        
+        @media #{$md} {
+            font-size: 24px;
+        }
+
+        @media #{$xl} {
+            font-size: 40px;
+        }
+    }
+    .hero-buttom{
+        transition: all .6s cubic-bezier(.215, .61, .355, 1);
+
+        img{
+            opacity: .8;
+            transition: all .6s cubic-bezier(.215, .61, .355, 1);
+        }
+        @media #{$lg} {
+            &:hover{
+                background-color: rgb(51 65 85);
+                img{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

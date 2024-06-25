@@ -28,16 +28,16 @@
 <body class="scroll-smooth">
 
     <!-- Header -->
-    <header class="w-full flex flex-wrap justify-between items-center px-6 bg-slate-800">
+    <header class="fixed top-0 left-0 z-50 w-full flex flex-wrap justify-between items-center px-6 bg-slate-800">
         <div class="logo py-4">
             <a href="<?php echo home_url(); ?>/#hero" class="text-slate-100"><img class="h-12" src="<?php echo get_template_directory_uri() . '/assets/image/Logo.svg'; ?>" alt=""></a>
         </div>
-        <div id="hamburger" class="lg:hidden block">
+        <div id="hamburger" class="xl:hidden block">
             <span></span>
             <span></span>
         </div>
-        <div class="lg:flex hidden flex-col w-[80%] h-full bg-sky-50">
-            <div class="menu-contact w-full flex flex-row justify-center items-center gap-8 border-b border-sky-800 py-2 text-sm">
+        <div class="xl:flex hidden flex-col 2xl:w-[80%] w-[70%] h-full bg-slate-50">
+            <div class="menu-contact w-full flex flex-row justify-center items-center gap-8 border-b border-slate-800 py-2 text-sm">
                 <?php
                 $header_email = get_field('email', 'option');
                 if ($header_email) :
@@ -64,19 +64,19 @@
                     <a href="<?php echo esc_url($header_prenotazione_url); ?>" target="<?php echo esc_attr($header_prenotazione_target); ?>"><?php echo esc_html($header_prenotazione_title); ?></a>
                 <?php endif; ?>
             </div>
-            <nav class="menu border-b border-sky-800 py-4">
+            <nav class="menu border-b border-slate-800 py-4">
                 <?php
                 wp_nav_menu(array(
                     'theme_location'    => 'primary',
                     'container'         =>  false,
-                    'menu_class'        => 'flex lg:row colum flex-wrap',
+                    'menu_class'        => 'flex xl:row colum flex-wrap',
                     'orderby'           => 'menu_order',
                     'items_wrap'        => '<ul id="%1$s" class="%2$s text-slate-800 justify-center">%3$s</ul>'
                 ));
                 ?>
             </nav>
         </div>
-        <nav class="lg:hidden block menu-mobile w-full">
+        <nav class="xl:hidden block menu-mobile w-full">
             <?php
             wp_nav_menu(array(
                 'theme_location'    => 'primary',
@@ -96,7 +96,7 @@
             ?>
 
                 <div class="cta-mobile w-full">
-                    <a href="<?php echo esc_url($header_cta_url); ?>" target="<?php echo esc_attr($header_cta_target); ?>" class="w-full block my-8 py-2 px-6 bg-transparent border border-sky-100 text-sky-100 text-center">
+                    <a href="<?php echo esc_url($header_cta_url); ?>" target="<?php echo esc_attr($header_cta_target); ?>" class="w-full block my-8 py-2 px-6 bg-transparent border border-slate-100 text-slate-100 text-center">
                         <?php echo esc_html($header_cta_title); ?>
                     </a>
                 </div>
@@ -110,8 +110,8 @@
             $header_cta_title = $header_cta['title'];
             $header_cta_target = $header_cta['target'] ? $header_cta['target'] : '_self';
         ?>
-            <div class="cta lg:block hidden lg:w-auto">
-                <a href="<?php echo esc_url($header_cta_url); ?>" target="<?php echo esc_attr($header_cta_target); ?>" class="lg:w-auto lg:block lg:my-0 py-2 px-6 bg-transparent hover:bg-sky-100 border border-sky-100 hover:border-slate-800 text-sky-100 hover:text-slate-800 text-center">
+            <div class="cta xl:block hidden xl:w-auto">
+                <a href="<?php echo esc_url($header_cta_url); ?>" target="<?php echo esc_attr($header_cta_target); ?>" class="xl:w-auto xl:block xl:my-0 py-2 px-6 bg-transparent hover:bg-slate-100 border border-slate-100 hover:border-slate-800 text-slate-100 hover:text-slate-800 text-center">
                     <?php echo esc_html($header_cta_title); ?>
                 </a>
             </div>

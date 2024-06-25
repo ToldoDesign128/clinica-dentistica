@@ -75,7 +75,7 @@ header {
           }
         }
 
-        @media #{$lg} {
+        @media #{$xl} {
           width: auto;
           padding: 0 1rem;
         }
@@ -118,7 +118,7 @@ header {
     overflow: clip;
     transition: all 0.6s ease;
 
-    @media #{$lg} {
+    @media #{$xl} {
       width: auto;
       max-height: fit-content;
     }
