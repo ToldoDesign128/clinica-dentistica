@@ -3,11 +3,15 @@
 <section id="hero" class=" px-6 pt-32">
     <div class="lg:min-h-[80vh] flex lg:flex-row flex-col bg-gradient-to-r from-slate-200 to-slate-600 overflow-clip border border-slate-800 rounded-xl">
         <div class="3xl:w-2/5 lg:w-1/2 w-full flex flex-col flex-wrap self-center lg:py-24 py-12 px-6">
-            <h1 class="w-full uppercase text-slate-800"><?php echo esc_html( get_field('titolo_hero') ); ?></h1>
-            <h2 class="w-full mt-6"><?php echo esc_html( get_field('sottotitolo_hero') ); ?></h2>
+            <h1 class="w-full uppercase text-slate-800"><?php echo esc_html(get_field('titolo_hero')); ?></h1>
+            <h2 class="w-full mt-6"><?php echo esc_html(get_field('sottotitolo_hero')); ?></h2>
             <a class="hero-buttom w-fit flex flex-row justify-between items-center mt-8 px-6 py-2 bg-slate-800 text-white lg:text-lg text-sm uppercase rounded-full" href="#ilCentro">Scopri il nuovo Centro <img class="h-5 w-auto pl-8" src="<?php echo get_template_directory_uri() . '/assets/image/icon/arrow-down.svg'; ?>" alt=""></a>
         </div>
-        <img class="3xl:w-3/5 lg:w-1/2 border-l border-slate-800 lg:block hidden object-cover" src="http://clinica-giuseppe.local/wp-content/uploads/2024/05/lesly-juarez-1AhGNGKuhR0-unsplash-scaled.jpg" alt="">
+        <?php
+        $image_hero = get_field('sfondo_hero');
+        if (!empty($image_hero)) : ?>
+            <img class="3xl:w-3/5 lg:w-1/2 border-l border-slate-800 lg:block hidden object-cover" src="<?php echo esc_url($image_hero['url']); ?>" alt="<?php echo esc_attr($image_hero['alt']); ?>" />
+        <?php endif; ?>
     </div>
 </section>
 
