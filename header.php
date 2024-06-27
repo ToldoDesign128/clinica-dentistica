@@ -29,7 +29,7 @@
 
     <!-- Header -->
     <header class="fixed top-0 left-0 z-50 w-full flex flex-wrap justify-between items-center bg-sky-800">
-        <div class="menu-contact w-full flex flex-row justify-end items-cente bg-sky-50 gap-8 py-2 px-6 text-sm">
+        <div class="menu-contact w-full lg:flex hidden flex-row justify-end items-cente bg-sky-50 gap-8 py-2 px-6 text-sm">
             <?php
             $header_email = get_field('email', 'option');
             if ($header_email) :

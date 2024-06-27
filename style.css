@@ -1250,6 +1250,9 @@ header .open-menu.menu-mobile {
   .lg\:mt-0 {
     margin-top: 0px;
   }
+  .lg\:flex {
+    display: flex;
+  }
   .lg\:min-h-\[80vh\] {
     min-height: 80vh;
   }
