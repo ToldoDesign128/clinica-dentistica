@@ -65,8 +65,8 @@
 
 <!-- Il Centro -->
 <section id="ilCentro" class="lg:pt-12 pt-20">
-    <div class="flex lg:flex-row flex-col justify-between lg:py-24 py-12 px-6">
-        <div class="xl:w-1/3 lg:w-2/5 w-full h-fit lg:sticky static top-28 left-0">
+    <div class="flex md:flex-row flex-col justify-between lg:py-24 py-12 px-6">
+        <div class="xl:w-1/3 md:w-2/5 w-full h-fit lg:sticky static top-32 left-0">
             <h4 class="w-fit h-fit relative uppercase xl:text-6xl md:text-4xl text-2xl">
                 <?php echo esc_html(get_field('titolo_il_centro')); ?>
                 <span class="w-full absolute bottom-[-2px] left-0 h-4 bg-sky-300 -z-10"></span>
@@ -104,7 +104,7 @@
             if ($images_gallery_1) : ?>
                 <div class="grid gap-4">
                     <?php foreach ($images_gallery_1 as $image_gallery_1) : ?>
-                        <img class="h-auto w-full max-h-96 max-w-full object-cover" src="<?php echo esc_url($image_gallery_1['sizes']['large']); ?>" alt="<?php echo esc_attr($image_gallery_1['alt']); ?>" />
+                        <img class="lg:h-auto md:h-full h-auto w-full max-h-96 max-w-full object-cover" src="<?php echo esc_url($image_gallery_1['sizes']['large']); ?>" alt="<?php echo esc_attr($image_gallery_1['alt']); ?>" />
                     <?php endforeach; ?>
                 </div>
             <?php endif;
@@ -112,7 +112,7 @@
             if ($images_gallery_2) : ?>
                 <div class="grid gap-4">
                     <?php foreach ($images_gallery_2 as $image_gallery_2) : ?>
-                        <img class="h-auto w-full max-h-96 max-w-full object-cover" src="<?php echo esc_url($image_gallery_2['sizes']['large']); ?>" alt="<?php echo esc_attr($image_gallery_2['alt']); ?>" />
+                        <img class="lg:h-auto md:h-full h-auto w-full max-h-96 max-w-full object-cover" src="<?php echo esc_url($image_gallery_2['sizes']['large']); ?>" alt="<?php echo esc_attr($image_gallery_2['alt']); ?>" />
                     <?php endforeach; ?>
                 </div>
             <?php endif; ?>
@@ -121,8 +121,45 @@
 </section>
 
 <!-- Servizi -->
-<section id="servizi" class="h-screen">
+<section id="servizi" class="lg:pt-12 pt-20 px-6 overflow-x-clip">
+    <div class="flex flex-row w-full py-12">
+        <h3 class="w-fit h-fit relative uppercase xl:text-6xl md:text-4xl text-2xl">
+            Servizi
+            <span class="w-full absolute bottom-[-2px] left-0 h-4 bg-sky-300 -z-10"></span>
+        </h3>
+    </div>
+    <div class="slider-servizi swiperService ">
+        <div class="swiper-wrapper">
 
+            <?php /* Custom Loop */
+
+            $custom_loop = new WP_Query(array(
+                'post_type'     => 'servizi',
+                'posts_per_page' => 999,
+                'orderby'        => 'menu_order',
+                'order'          => 'ASC',
+            )); ?>
+
+            <?php if ($custom_loop->have_posts()) : while ($custom_loop->have_posts()) : $custom_loop->the_post(); ?>
+                    <article class="swiper-slide md:max-h-[600px] max-h-full bg-sky-800 text-sky-100 overflow-clip">
+                        <h3 class="xl:text-3xl md:text-2xl text-xl leading-tight text-sky-50 py-12 px-6"><?php the_title(); ?></h3>
+                        <div class="pb-12 px-6"><?php the_field('testo_servizi'); ?></div>
+                        <?php
+                        $image_servizi = get_field('immagine_servizi');
+                        if (!empty($image_servizi)) : ?>
+                            <img class="w-full md:block hidden object-cover" src="<?php echo esc_url($image_servizi['url']); ?>" alt="<?php echo esc_attr($image_servizi['alt']); ?>" />
+                        <?php endif; ?>
+                    </article>
+                    <?php wp_reset_postdata(); ?>
+            <?php endwhile;
+            endif; ?>
+        </div>
+        <div class="navigation-wrap">
+            <!-- Navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
 </section>
 
 <!-- Casi Clinici -->
@@ -165,13 +202,13 @@
 </section>
 
 <!-- Form -->
-<section id="formContatti" class="flex flex-row flex-wrap bg-sky-300 border-t border-sky-800">
+<section id="formContatti" class="flex flex-row flex-wrap bg-sky-200">
     <div class="xl:w-1/2 w-full xl:px-12 px-6 xl:py-16 py-8">
-        <div class="form bg-sky-600 p-8">
+        <div class="form bg-sky-700 p-8">
             <?php echo do_shortcode('[contact-form-7 id="a59275a" title="Form di contatto"]'); ?>
         </div>
     </div>
-    <div class="map xl:w-1/2 w-full lg:border-l border-l-0 lg:border-t-0 border-t border-sky-800">
+    <div class="map xl:w-1/2 w-full">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.244385561743!2d12.495821675561842!3d41.909104863473075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f61090236f0dd%3A0xddb583b875f0369!2sVia%20Piave%2C%2040%2C%2000187%20Roma%20RM!5e0!3m2!1sit!2sit!4v1719236241753!5m2!1sit!2sit" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
     </div>
