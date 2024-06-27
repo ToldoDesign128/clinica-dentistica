@@ -13,12 +13,12 @@ if ($footer_whatsapp) :
 
 
 <!-- Footer -->
-<footer class="flex flex-row flex-wrap justify-between bg-slate-800">
-    <div class="footer-logo xl:w-1/6 w-full flex items-center xl:border-r border-b border-slate-50 xl:py-12 py-8 px-6">
-        <a href="#" class="text-slate-100"><img class="h-12" src="<?php echo get_template_directory_uri() . '/assets/image/Logo.svg'; ?>" alt=""></a>
+<footer class="flex flex-row flex-wrap justify-between bg-sky-800">
+    <div class="footer-logo xl:w-1/6 w-full flex items-center xl:border-r border-b border-sky-50 xl:py-12 py-8 px-6">
+        <a href="#" class="text-sky-100"><img class="h-12" src="<?php echo get_template_directory_uri() . '/assets/image/Logo.svg'; ?>" alt=""></a>
     </div>
     <div class="footer-content xl:w-1/2 w-full flex flex-row flex-wrap xl:py-12 py-8 px-6 text-right">
-        <div class="xl:w-1/2 w-full flex flex-col flex-wrap xl:items-end items-center gap-4 text-lg text-slate-50">
+        <div class="xl:w-1/2 w-full flex flex-col flex-wrap xl:items-end items-center gap-4 text-lg text-sky-50">
             <?php
             $footer_facebook = get_field('facebook', 'option');
             if ($footer_facebook) :
@@ -51,7 +51,7 @@ if ($footer_whatsapp) :
                 </a>
             <?php endif; ?>
         </div>
-        <div class="xl:w-1/2 w-full flex flex-col flex-wrap xl:items-end items-center xl:pt-0 pt-4 gap-4 text-slate-50">
+        <div class="xl:w-1/2 w-full flex flex-col flex-wrap xl:items-end items-center xl:pt-0 pt-4 gap-4 text-sky-50">
             <?php
             $footer_privacy_policy = get_field('privacy_policy', 'option');
             if ($footer_privacy_policy) :
@@ -77,9 +77,9 @@ if ($footer_whatsapp) :
         </div>
 
     </div>
-    <div class="footer-credits text-center w-full border-t border-slate-50 py-4 px-6">
-        <p class="flex items-center justify-center text-slate-50">Design and Develop by
-            <a class=" ml-2 text-slate-100" href="https://federicotoldo.com/" target="_blank">Federico Toldo</a>
+    <div class="footer-credits text-center w-full border-t border-sky-50 py-4 px-6">
+        <p class="flex items-center justify-center text-sky-50">Design and Develop by
+            <a class=" ml-2 text-sky-100" href="https://federicotoldo.com/" target="_blank">Federico Toldo</a>
             <span class="text-red-500">*</span>
         </p>
     </div>

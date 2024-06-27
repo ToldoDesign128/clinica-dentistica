@@ -50,7 +50,7 @@ header {
 
         a {
           display: block;
-          color: rgb(30 41 59);
+          color: rgb(240 249 255);
           position: relative;
           overflow: hidden;
           transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -58,7 +58,7 @@ header {
           &::after {
             content: "";
             position: absolute;
-            background-color: rgb(30 41 59);
+            background-color: rgb(240 249 255);
             height: 1px;
             width: 100%;
             left: -100%;
