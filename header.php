@@ -74,7 +74,7 @@
         <div class="logo py-4 px-6">
             <a href="<?php echo home_url(); ?>/#hero" class="text-sky-100"><img class="h-12" src="<?php echo get_template_directory_uri() . '/assets/image/Logo.svg'; ?>" alt=""></a>
         </div>
-        <div id="hamburger" class="xl:hidden block px-6">
+        <div id="hamburger" class="xl:hidden block mx-6">
             <span></span>
             <span></span>
         </div>
