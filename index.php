@@ -1,16 +1,16 @@
 <?php get_header(); ?>
 <!-- Hero -->
 <section id="hero" class=" px-6 lg:pt-32 pt-24">
-    <div class="lg:min-h-[80vh] flex lg:flex-row flex-col bg-gradient-to-r from-slate-50 to-slate-300 overflow-clip border border-slate-800 rounded-xl">
+    <div class="lg:min-h-[80vh] flex lg:flex-row flex-col bg-gradient-to-r from-slate-100 to-slate-400 overflow-clip">
         <div class="3xl:w-2/5 lg:w-1/2 w-full flex flex-col flex-wrap self-center lg:py-24 py-12 px-6">
             <h1 class="w-full uppercase text-slate-800"><?php echo esc_html(get_field('titolo_hero')); ?></h1>
             <h2 class="w-full mt-6"><?php echo esc_html(get_field('sottotitolo_hero')); ?></h2>
-            <a class="hero-buttom w-fit flex flex-row justify-between items-center mt-8 px-6 py-2 bg-slate-800 text-white lg:text-lg text-sm uppercase rounded-full" href="#ilCentro">Scopri il nuovo Centro <img class="h-5 w-auto pl-8" src="<?php echo get_template_directory_uri() . '/assets/image/icon/arrow-down.svg'; ?>" alt=""></a>
+            <a class="hero-buttom w-fit flex flex-row justify-between items-center mt-8 px-6 py-2 bg-slate-800 text-white lg:text-lg text-sm uppercase" href="#ilCentro">Scopri il nuovo Centro <img class="h-5 w-auto pl-8" src="<?php echo get_template_directory_uri() . '/assets/image/icon/arrow-down.svg'; ?>" alt=""></a>
         </div>
         <?php
         $image_hero = get_field('sfondo_hero');
         if (!empty($image_hero)) : ?>
-            <img class="3xl:w-3/5 lg:w-1/2 lg:border-l border-l-0 lg:border-t-0 border-t border-slate-800 object-cover" src="<?php echo esc_url($image_hero['url']); ?>" alt="<?php echo esc_attr($image_hero['alt']); ?>" />
+            <img class="3xl:w-3/5 lg:w-1/2 object-cover" src="<?php echo esc_url($image_hero['url']); ?>" alt="<?php echo esc_attr($image_hero['alt']); ?>" />
         <?php endif; ?>
     </div>
 </section>
@@ -22,7 +22,7 @@
             <?php echo esc_html(get_field('titolo_chi_siamo')); ?>
             <span class="w-full absolute bottom-[-2px] left-0 h-4 bg-slate-300 -z-10"></span>
         </h3>
-        <div class="xl:w-3/5 lg:w-1/2 w-full flex xl:flex-row flex-col justify-between bg-slate-200 rounded-xl lg:mt-0 mt-8 lg:p-6 p-4">
+        <div class="xl:w-3/5 lg:w-1/2 w-full flex xl:flex-row flex-col justify-between bg-slate-200 lg:mt-0 mt-8 lg:p-6 p-4">
             <div class="xl:w-5/12 w-full">
                 <div class="w-full lg:text-lg text-base"><?php the_field('testo_1_chi_siamo'); ?></div>
                 <div class="w-full lg:text-lg text-base py-6"><?php the_field('testo_2_chi_siamo'); ?></div>
@@ -31,11 +31,11 @@
             <?php
             $image_hero = get_field('immagine_chi_siamo');
             if (!empty($image_hero)) : ?>
-                <img class="xl:w-2/5 w-full xl:mt-0 mt-8 rounded-md object-cover" src="<?php echo esc_url($image_hero['url']); ?>" alt="<?php echo esc_attr($image_hero['alt']); ?>" />
+                <img class="xl:w-2/5 w-full xl:mt-0 mt-8 object-cover" src="<?php echo esc_url($image_hero['url']); ?>" alt="<?php echo esc_attr($image_hero['alt']); ?>" />
             <?php endif; ?>
         </div>
     </div>
-    <div class="flex lg:flex-row flex-col justify-between bg-slate-700 text-slate-100 rounded-xl mx-6 lg:p-12 p-6">
+    <div class="flex lg:flex-row flex-col justify-between bg-slate-700 text-slate-100 mx-6 lg:p-12 p-6">
         <div class="xl:w-2/5 lg:w-1/2 w-full">
             <div class="w-full lg:text-lg text-base"><?php the_field('testo_4_chi_siamo'); ?></div>
             <div class="w-full lg:text-lg text-base pt-6 "><?php the_field('testo_5_chi_siamo'); ?></div>
@@ -67,10 +67,10 @@
 <section id="ilCentro" class="lg:pt-12 pt-20">
     <div class="flex lg:flex-row flex-col justify-between lg:py-24 py-12 px-6">
         <div class="xl:w-1/3 lg:w-2/5 w-full h-fit lg:sticky static top-28 left-0">
-            <h3 class="w-fit h-fit relative uppercase xl:text-6xl md:text-4xl text-2xl">
+            <h4 class="w-fit h-fit relative uppercase xl:text-6xl md:text-4xl text-2xl">
                 <?php echo esc_html(get_field('titolo_il_centro')); ?>
                 <span class="w-full absolute bottom-[-2px] left-0 h-4 bg-slate-300 -z-10"></span>
-            </h3>
+            </h4>
             <div class="w-full text-base lg:pt-12 pt-6"><?php the_field('testo_il_centro'); ?></div>
             <div class="lg:py-12 py-6">
                 <p class="w-fit uppercase relative text-slate-800 lg:text-2xl text-xl">
@@ -104,7 +104,7 @@
             if ($images_gallery_1) : ?>
                 <div class="grid gap-4">
                     <?php foreach ($images_gallery_1 as $image_gallery_1) : ?>
-                        <img class="h-auto w-full max-h-96 max-w-full object-cover rounded-lg" src="<?php echo esc_url($image_gallery_1['sizes']['large']); ?>" alt="<?php echo esc_attr($image_gallery_1['alt']); ?>" />
+                        <img class="h-auto w-full max-h-96 max-w-full object-cover" src="<?php echo esc_url($image_gallery_1['sizes']['large']); ?>" alt="<?php echo esc_attr($image_gallery_1['alt']); ?>" />
                     <?php endforeach; ?>
                 </div>
             <?php endif;
@@ -112,7 +112,7 @@
             if ($images_gallery_2) : ?>
                 <div class="grid gap-4">
                     <?php foreach ($images_gallery_2 as $image_gallery_2) : ?>
-                        <img class="h-auto w-full max-h-96 max-w-full object-cover rounded-lg" src="<?php echo esc_url($image_gallery_2['sizes']['large']); ?>" alt="<?php echo esc_attr($image_gallery_2['alt']); ?>" />
+                        <img class="h-auto w-full max-h-96 max-w-full object-cover" src="<?php echo esc_url($image_gallery_2['sizes']['large']); ?>" alt="<?php echo esc_attr($image_gallery_2['alt']); ?>" />
                     <?php endforeach; ?>
                 </div>
             <?php endif; ?>
@@ -130,8 +130,9 @@
 <!-- Testimonianze -->
 <section id="testimonianze" class="pt-32 mb-24 flex flex-row flex-wrap">
     <div class="xl:w-1/3 md:w-1/2 w-full px-6 py-4">
-        <p class="w-fit xl:text-5xl text-3xl">
-            <span class="font-semibold">Cosa dicono di noi</span>
+        <p class="w-fit h-fit relative uppercase xl:text-5xl md:text-3xl text-2xl">
+            Cosa dicono di noi
+            <span class="w-full absolute bottom-[-2px] left-0 h-4 bg-slate-300 -z-10"></span>
         </p>
     </div>
     <!-- Quote block -->
