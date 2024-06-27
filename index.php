@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <!-- Hero -->
-<section id="hero" class=" px-6 pt-32">
+<section id="hero" class=" px-6 lg:pt-32 pt-24">
     <div class="lg:min-h-[80vh] flex lg:flex-row flex-col bg-gradient-to-r from-slate-50 to-slate-300 overflow-clip border border-slate-800 rounded-xl">
         <div class="3xl:w-2/5 lg:w-1/2 w-full flex flex-col flex-wrap self-center lg:py-24 py-12 px-6">
             <h1 class="w-full uppercase text-slate-800"><?php echo esc_html(get_field('titolo_hero')); ?></h1>
@@ -10,13 +10,13 @@
         <?php
         $image_hero = get_field('sfondo_hero');
         if (!empty($image_hero)) : ?>
-            <img class="3xl:w-3/5 lg:w-1/2 border-l border-slate-800 lg:block hidden object-cover" src="<?php echo esc_url($image_hero['url']); ?>" alt="<?php echo esc_attr($image_hero['alt']); ?>" />
+            <img class="3xl:w-3/5 lg:w-1/2 lg:border-l border-l-0 lg:border-t-0 border-t border-slate-800 object-cover" src="<?php echo esc_url($image_hero['url']); ?>" alt="<?php echo esc_attr($image_hero['alt']); ?>" />
         <?php endif; ?>
     </div>
 </section>
 
 <!-- Chi Siamo -->
-<section id="chiSiamo" class="lg:pt-12 pt-24">
+<section id="chiSiamo" class="lg:pt-12 pt-20">
     <div class="flex lg:flex-row flex-col justify-between lg:py-24 py-12 px-6">
         <h3 class="w-fit h-fit relative uppercase xl:text-6xl md:text-4xl text-2xl">
             <?php echo esc_html(get_field('titolo_chi_siamo')); ?>
@@ -64,7 +64,7 @@
 </section>
 
 <!-- Il Centro -->
-<section id="ilCentro" class="lg:pt-12 pt-24">
+<section id="ilCentro" class="lg:pt-12 pt-20">
     <div class="flex lg:flex-row flex-col justify-between lg:py-24 py-12 px-6">
         <div class="xl:w-1/3 lg:w-2/5 w-full h-fit lg:sticky static top-28 left-0">
             <h3 class="w-fit h-fit relative uppercase xl:text-6xl md:text-4xl text-2xl">
