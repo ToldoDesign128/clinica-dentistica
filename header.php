@@ -37,7 +37,12 @@
                 $header_email_title = $header_email['title'];
                 $header_email_target = $header_email['target'] ? $header_email['target'] : '_self';
             ?>
-                <a href="<?php echo esc_url($header_email_url); ?>" target="<?php echo esc_attr($header_email_target); ?>"><?php echo esc_html($header_email_title); ?></a>
+                <div class="flex flex-row items-center">
+                    <img class="inline h-5 w-auto pr-2" src="<?php echo get_template_directory_uri() . '/assets/image/icon/mail.svg'; ?>" alt="">
+                    <a href="<?php echo esc_url($header_email_url); ?>" target="<?php echo esc_attr($header_email_target); ?>">
+                        <?php echo esc_html($header_email_title); ?>
+                    </a>
+                </div>
             <?php endif;
             $header_tel = get_field('telefono', 'option');
             if ($header_tel) :
@@ -45,7 +50,12 @@
                 $header_tel_title = $header_tel['title'];
                 $header_tel_target = $header_tel['target'] ? $header_tel['target'] : '_self';
             ?>
-                <a href="<?php echo esc_url($header_tel_url); ?>" target="<?php echo esc_attr($header_tel_target); ?>"><?php echo esc_html($header_tel_title); ?></a>
+                <div class="flex flex-row items-center">
+                    <img class="inline h-5 w-auto pr-2" src="<?php echo get_template_directory_uri() . '/assets/image/icon/phone.svg'; ?>" alt="">
+                    <a href="<?php echo esc_url($header_tel_url); ?>" target="<?php echo esc_attr($header_tel_target); ?>">
+                        <?php echo esc_html($header_tel_title); ?>
+                    </a>
+                </div>
             <?php endif;
             $header_prenotazione = get_field('prenota_una_visita', 'option');
             if ($header_prenotazione) :
@@ -53,7 +63,12 @@
                 $header_prenotazione_title = $header_prenotazione['title'];
                 $header_prenotazione_target = $header_prenotazione['target'] ? $header_prenotazione['target'] : '_self';
             ?>
-                <a href="<?php echo esc_url($header_prenotazione_url); ?>" target="<?php echo esc_attr($header_prenotazione_target); ?>"><?php echo esc_html($header_prenotazione_title); ?></a>
+                <div class="flex flex-row items-center">
+                    <img class="inline h-5 w-auto pr-2" src="<?php echo get_template_directory_uri() . '/assets/image/icon/map.svg'; ?>" alt="">
+                    <a href="<?php echo esc_url($header_prenotazione_url); ?>" target="<?php echo esc_attr($header_prenotazione_target); ?>">
+                        <?php echo esc_html($header_prenotazione_title); ?>
+                    </a>
+                </div>
             <?php endif; ?>
         </div>
         <div class="logo py-4 px-6">
