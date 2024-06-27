@@ -104,7 +104,7 @@
             if ($images_gallery_1) : ?>
                 <div class="grid gap-4">
                     <?php foreach ($images_gallery_1 as $image_gallery_1) : ?>
-                        <img class="h-auto max-w-full rounded-lg" src="<?php echo esc_url($image_gallery_1['sizes']['large']); ?>" alt="<?php echo esc_attr($image_gallery_1['alt']); ?>" />
+                        <img class="h-auto max-h-96 max-w-full object-cover rounded-lg" src="<?php echo esc_url($image_gallery_1['sizes']['full']); ?>" alt="<?php echo esc_attr($image_gallery_1['alt']); ?>" />
                     <?php endforeach; ?>
                 </div>
             <?php endif;
@@ -112,7 +112,7 @@
             if ($images_gallery_2) : ?>
                 <div class="grid gap-4">
                     <?php foreach ($images_gallery_2 as $image_gallery_2) : ?>
-                        <img class="h-auto max-w-full rounded-lg" src="<?php echo esc_url($image_gallery_2['sizes']['large']); ?>" alt="<?php echo esc_attr($image_gallery_2['alt']); ?>" />
+                        <img class="h-auto max-h-96 max-w-full object-cover rounded-lg" src="<?php echo esc_url($image_gallery_2['sizes']['full']); ?>" alt="<?php echo esc_attr($image_gallery_2['alt']); ?>" />
                     <?php endforeach; ?>
                 </div>
             <?php endif; ?>
