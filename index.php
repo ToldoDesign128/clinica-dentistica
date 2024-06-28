@@ -1,16 +1,16 @@
 <?php get_header(); ?>
 <!-- Hero -->
-<section id="hero" class=" px-6 lg:pt-32 pt-24">
-    <div class="lg:min-h-[80vh] flex lg:flex-row flex-col bg-gradient-to-r from-sky-100 to-sky-400 overflow-clip">
-        <div class="3xl:w-2/5 lg:w-1/2 w-full flex flex-col flex-wrap self-center lg:py-24 py-12 px-6">
-            <h1 class="w-full uppercase text-sky-800"><?php echo esc_html(get_field('titolo_hero')); ?></h1>
+<section id="hero" class="h-screen">
+    <div class="h-full flex lg:flex-row flex-col bg-gradient-to-r from-blue-100 to-blue-400 overflow-clip relative">
+        <div class="3xl:w-2/5 lg:w-1/2 w-full flex flex-col flex-wrap self-center lg:mt-20 mt-12 lg:py-24 py-12 px-6 z-10">
+            <h1 class="w-full uppercase text-blue-800"><?php echo esc_html(get_field('titolo_hero')); ?></h1>
             <h2 class="w-full mt-6"><?php echo esc_html(get_field('sottotitolo_hero')); ?></h2>
-            <a class="hero-buttom w-fit flex flex-row justify-between items-center mt-8 px-6 py-2 bg-sky-800 text-white lg:text-lg text-sm uppercase" href="#ilCentro">Scopri il nuovo Centro <img class="h-5 w-auto pl-8" src="<?php echo get_template_directory_uri() . '/assets/image/icon/arrow-down.svg'; ?>" alt=""></a>
+            <a class="hero-buttom w-fit flex flex-row justify-between items-center mt-8 px-6 py-2 bg-blue-800 text-white rounded-full lg:text-lg text-sm uppercase" href="#ilCentro">Scopri il nuovo Centro <img class="h-5 w-auto pl-8" src="<?php echo get_template_directory_uri() . '/assets/image/icon/arrow-down.svg'; ?>" alt=""></a>
         </div>
         <?php
         $image_hero = get_field('sfondo_hero');
         if (!empty($image_hero)) : ?>
-            <img class="3xl:w-3/5 lg:w-1/2 object-cover" src="<?php echo esc_url($image_hero['url']); ?>" alt="<?php echo esc_attr($image_hero['alt']); ?>" />
+            <img class="absolute t-0 l-0 w-full h-full object-cover z-0" src="<?php echo esc_url($image_hero['url']); ?>" alt="<?php echo esc_attr($image_hero['alt']); ?>" />
         <?php endif; ?>
     </div>
 </section>
@@ -20,9 +20,9 @@
     <div class="flex lg:flex-row flex-col justify-between lg:py-24 py-12 px-6">
         <h3 class="w-fit h-fit relative uppercase xl:text-6xl md:text-4xl text-2xl">
             <?php echo esc_html(get_field('titolo_chi_siamo')); ?>
-            <span class="w-full absolute bottom-[-2px] left-0 h-4 bg-sky-300 -z-10"></span>
+            <span class="w-full absolute bottom-[-2px] left-0 h-4 bg-blue-300 -z-10"></span>
         </h3>
-        <div class="xl:w-3/5 lg:w-1/2 w-full flex xl:flex-row flex-col justify-between bg-sky-200 lg:mt-0 mt-8 lg:p-6 p-4">
+        <div class="xl:w-3/5 lg:w-1/2 w-full flex xl:flex-row flex-col justify-between bg-blue-200 lg:mt-0 mt-8 lg:p-6 p-4 rounded-lg">
             <div class="xl:w-5/12 w-full">
                 <div class="w-full lg:text-lg text-base"><?php the_field('testo_1_chi_siamo'); ?></div>
                 <div class="w-full lg:text-lg text-base py-6"><?php the_field('testo_2_chi_siamo'); ?></div>
@@ -31,11 +31,11 @@
             <?php
             $image_hero = get_field('immagine_chi_siamo');
             if (!empty($image_hero)) : ?>
-                <img class="xl:w-2/5 w-full xl:mt-0 mt-8 object-cover" src="<?php echo esc_url($image_hero['url']); ?>" alt="<?php echo esc_attr($image_hero['alt']); ?>" />
+                <img class="xl:w-2/5 w-full xl:mt-0 mt-8 object-cover rounded-md" src="<?php echo esc_url($image_hero['url']); ?>" alt="<?php echo esc_attr($image_hero['alt']); ?>" />
             <?php endif; ?>
         </div>
     </div>
-    <div class="flex lg:flex-row flex-col justify-between bg-sky-700 text-sky-100 mx-6 lg:p-12 p-6">
+    <div class="flex lg:flex-row flex-col justify-between bg-blue-700 text-blue-100 mx-6 lg:p-12 p-6 rounded-lg">
         <div class="xl:w-2/5 lg:w-1/2 w-full">
             <div class="w-full lg:text-lg text-base"><?php the_field('testo_4_chi_siamo'); ?></div>
             <div class="w-full lg:text-lg text-base pt-6 "><?php the_field('testo_5_chi_siamo'); ?></div>
@@ -50,8 +50,8 @@
                     while (have_rows('repeater_chi_siamo')) : the_row();
                         // Load sub field value.
                         $spec_repeater = get_sub_field('specializzazioni_repeater_chi_siamo'); ?>
-                        <p class="md:w-1/2 w-full flex flex-row items-center lg:text-2xl text-xl leading-none text-sky-200 pt-4">
-                            <span class="h-1 w-1 rounded-full mr-4 bg-sky-200"></span>
+                        <p class="md:w-1/2 w-full flex flex-row items-center lg:text-2xl text-xl leading-none text-blue-200 pt-4">
+                            <span class="h-1 w-1 rounded-full mr-4 bg-blue-200"></span>
                             <?php echo esc_html($spec_repeater); ?>
                         </p>
                 <?php
@@ -69,13 +69,13 @@
         <div class="xl:w-1/3 md:w-2/5 w-full h-fit lg:sticky static top-32 left-0">
             <h4 class="w-fit h-fit relative uppercase xl:text-6xl md:text-4xl text-2xl">
                 <?php echo esc_html(get_field('titolo_il_centro')); ?>
-                <span class="w-full absolute bottom-[-2px] left-0 h-4 bg-sky-300 -z-10"></span>
+                <span class="w-full absolute bottom-[-2px] left-0 h-4 bg-blue-300 -z-10"></span>
             </h4>
             <div class="w-full text-base lg:pt-12 pt-6"><?php the_field('testo_il_centro'); ?></div>
             <div class="lg:py-12 py-6">
-                <p class="w-fit uppercase relative text-sky-800 lg:text-2xl text-xl">
+                <p class="w-fit uppercase relative text-blue-800 lg:text-2xl text-xl">
                     Orari
-                    <span class="w-full absolute bottom-px left-0 h-2 bg-sky-300 -z-10"></span>
+                    <span class="w-full absolute bottom-px left-0 h-2 bg-blue-300 -z-10"></span>
                 </p>
                 <ul class="lg:text-xl text-lg py-6">
                     <?php
@@ -87,7 +87,7 @@
                             $day_repeater = get_sub_field('giorno_repeater');
                             $orari_repeater = get_sub_field('orario_repeater'); ?>
                             <li class="py-1 flex flex-row">
-                                <span class="lg:w-1/4 w-1/2 text-sky-700 font-semibold">
+                                <span class="lg:w-1/4 w-1/2 text-blue-700 font-semibold">
                                     <?php echo esc_html($day_repeater); ?>
                                 </span>
                                 <?php echo esc_html($orari_repeater); ?>
@@ -104,7 +104,7 @@
             if ($images_gallery_1) : ?>
                 <div class="grid gap-4">
                     <?php foreach ($images_gallery_1 as $image_gallery_1) : ?>
-                        <img class="lg:h-auto md:h-full h-auto w-full max-h-96 max-w-full object-cover" src="<?php echo esc_url($image_gallery_1['sizes']['large']); ?>" alt="<?php echo esc_attr($image_gallery_1['alt']); ?>" />
+                        <img class="lg:h-auto md:h-full h-auto w-full max-h-96 max-w-full object-cover rounded-lg" src="<?php echo esc_url($image_gallery_1['sizes']['large']); ?>" alt="<?php echo esc_attr($image_gallery_1['alt']); ?>" />
                     <?php endforeach; ?>
                 </div>
             <?php endif;
@@ -112,7 +112,7 @@
             if ($images_gallery_2) : ?>
                 <div class="grid gap-4">
                     <?php foreach ($images_gallery_2 as $image_gallery_2) : ?>
-                        <img class="lg:h-auto md:h-full h-auto w-full max-h-96 max-w-full object-cover" src="<?php echo esc_url($image_gallery_2['sizes']['large']); ?>" alt="<?php echo esc_attr($image_gallery_2['alt']); ?>" />
+                        <img class="lg:h-auto md:h-full h-auto w-full max-h-96 max-w-full object-cover rounded-lg" src="<?php echo esc_url($image_gallery_2['sizes']['large']); ?>" alt="<?php echo esc_attr($image_gallery_2['alt']); ?>" />
                     <?php endforeach; ?>
                 </div>
             <?php endif; ?>
@@ -125,7 +125,7 @@
     <div class="flex flex-row w-full py-12">
         <h3 class="w-fit h-fit relative uppercase xl:text-6xl md:text-4xl text-2xl">
             Servizi
-            <span class="w-full absolute bottom-[-2px] left-0 h-4 bg-sky-300 -z-10"></span>
+            <span class="w-full absolute bottom-[-2px] left-0 h-4 bg-blue-300 -z-10"></span>
         </h3>
     </div>
     <div class="slider-servizi swiperService ">
@@ -141,8 +141,8 @@
             )); ?>
 
             <?php if ($custom_loop->have_posts()) : while ($custom_loop->have_posts()) : $custom_loop->the_post(); ?>
-                    <article class="swiper-slide md:max-h-[600px] max-h-full bg-sky-800 text-sky-100 overflow-clip">
-                        <h3 class="xl:text-3xl md:text-2xl text-xl leading-tight text-sky-50 py-12 px-6"><?php the_title(); ?></h3>
+                    <article class="swiper-slide md:max-h-[600px] max-h-full bg-blue-800 text-blue-100 overflow-clip rounded-lg">
+                        <h3 class="xl:text-3xl md:text-2xl text-xl leading-tight text-blue-50 py-12 px-6"><?php the_title(); ?></h3>
                         <div class="pb-12 px-6"><?php the_field('testo_servizi'); ?></div>
                         <?php
                         $image_servizi = get_field('immagine_servizi');
@@ -167,9 +167,9 @@
 <!-- Testimonianze -->
 <section id="testimonianze" class="pt-32 mb-24 flex flex-row flex-wrap">
     <div class="xl:w-1/3 md:w-1/2 w-full px-6 py-4">
-        <p class="w-fit h-fit relative uppercase xl:text-5xl md:text-3xl text-2xl">
+        <p class="w-fit h-fit relative uppercase xl:text-4xl md:text-3xl text-2xl">
             Cosa dicono di noi
-            <span class="w-full absolute bottom-[-2px] left-0 h-4 bg-sky-300 -z-10"></span>
+            <span class="w-full absolute bottom-[-2px] left-0 h-4 bg-blue-300 -z-10"></span>
         </p>
     </div>
     <!-- Quote block -->
@@ -186,7 +186,7 @@
             <?php if ($custom_loop->have_posts()) : while ($custom_loop->have_posts()) : $custom_loop->the_post(); ?>
 
                     <div class="swiper-slide">
-                        <p class="xl:text-3xl border-b border-sky-500 pb-4"><?php echo wp_kses_post(get_field('testo_recensione')); ?></p>
+                        <p class="xl:text-3xl border-b border-blue-500 pb-4"><?php echo wp_kses_post(get_field('testo_recensione')); ?></p>
                         <p class="xl:text-xl text-right font-bold py-4"><?php echo esc_html(get_field('nome_e_cognome')); ?></p>
                     </div>
                     <?php wp_reset_postdata(); ?>
@@ -202,9 +202,9 @@
 </section>
 
 <!-- Form -->
-<section id="formContatti" class="flex flex-row flex-wrap bg-sky-200">
+<section id="formContatti" class="flex flex-row flex-wrap bg-blue-200">
     <div class="xl:w-1/2 w-full xl:px-12 px-6 xl:py-16 py-8">
-        <div class="form bg-sky-700 p-8">
+        <div class="form bg-blue-700 p-8 rounded-lg">
             <?php echo do_shortcode('[contact-form-7 id="a59275a" title="Form di contatto"]'); ?>
         </div>
     </div>

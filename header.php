@@ -28,8 +28,8 @@
 <body class="scroll-smooth">
 
     <!-- Header -->
-    <header class="fixed top-0 left-0 z-50 w-full flex flex-wrap justify-between items-center bg-sky-800">
-        <div class="menu-contact w-full lg:flex hidden flex-row justify-end items-cente bg-sky-50 gap-8 py-2 px-6 text-sm">
+    <header class="fixed top-0 left-0 z-50 w-full flex flex-wrap justify-between items-center bg-blue-800">
+        <div class="menu-contact w-full lg:flex hidden flex-row justify-end items-cente bg-blue-50 gap-8 py-2 px-6 text-sm">
             <?php
             $header_email = get_field('email', 'option');
             if ($header_email) :
@@ -72,7 +72,7 @@
             <?php endif; ?>
         </div>
         <div class="logo py-4 px-6">
-            <a href="<?php echo home_url(); ?>/#hero" class="text-sky-100"><img class="h-12" src="<?php echo get_template_directory_uri() . '/assets/image/Logo.svg'; ?>" alt=""></a>
+            <a href="<?php echo home_url(); ?>/#hero" class="text-blue-100"><img class="h-12" src="<?php echo get_template_directory_uri() . '/assets/image/Logo.svg'; ?>" alt=""></a>
         </div>
         <div id="hamburger" class="xl:hidden block mx-6">
             <span></span>
@@ -87,7 +87,7 @@
                     'container'         =>  false,
                     'menu_class'        => 'flex xl:row colum flex-wrap',
                     'orderby'           => 'menu_order',
-                    'items_wrap'        => '<ul id="%1$s" class="%2$s text-sky-50 justify-center">%3$s</ul>'
+                    'items_wrap'        => '<ul id="%1$s" class="%2$s text-blue-50 justify-center">%3$s</ul>'
                 ));
                 ?>
             </nav>
@@ -99,7 +99,7 @@
                 'container'         =>  false,
                 'menu_class'        => 'w-full flex flex-col flex-wrap',
                 'orderby'           => 'menu_order',
-                'items_wrap'        => '<ul id="%1$s" class="%2$s text-sky-50 md:text-[48px] text-[36px]">%3$s</ul>'
+                'items_wrap'        => '<ul id="%1$s" class="%2$s text-blue-50 md:text-[48px] text-[36px]">%3$s</ul>'
             ));
             ?>
 
@@ -112,7 +112,7 @@
             ?>
 
                 <div class="cta-mobile w-full">
-                    <a href="<?php echo esc_url($header_cta_url); ?>" target="<?php echo esc_attr($header_cta_target); ?>" class="w-full block my-8 py-2 px-6 bg-transparent border border-sky-100 text-sky-100 text-center">
+                    <a href="<?php echo esc_url($header_cta_url); ?>" target="<?php echo esc_attr($header_cta_target); ?>" class="w-full block my-8 py-2 px-6 bg-transparent border border-blue-100 text-blue-100 text-center  rounded-lg">
                         <?php echo esc_html($header_cta_title); ?>
                     </a>
                 </div>
@@ -127,7 +127,7 @@
             $header_cta_target = $header_cta['target'] ? $header_cta['target'] : '_self';
         ?>
             <div class="cta xl:block hidden xl:w-auto px-6">
-                <a href="<?php echo esc_url($header_cta_url); ?>" target="<?php echo esc_attr($header_cta_target); ?>" class="xl:w-auto xl:block xl:my-0 py-2 px-6 bg-transparent hover:bg-sky-100 border border-sky-100 hover:border-sky-800 text-sky-100 hover:text-sky-800 text-center">
+                <a href="<?php echo esc_url($header_cta_url); ?>" target="<?php echo esc_attr($header_cta_target); ?>" class="xl:w-auto xl:block xl:my-0 py-2 px-6 bg-transparent hover:bg-blue-100 border border-blue-100 hover:border-blue-800 text-blue-100 hover:text-blue-800 text-center  rounded-full">
                     <?php echo esc_html($header_cta_title); ?>
                 </a>
             </div>
