@@ -30,14 +30,34 @@ if ($footer_whatsapp) :
                     <?php echo esc_html($footer_facebook_title); ?>
                 </a>
             <?php endif;
-            $footer_youtube = get_field('youtube$footer_youtube', 'option');
-            if ($footer_youtube) :
-                $footer_youtube_link = $footer_youtube['url'];
-                $footer_youtube_title = $footer_youtube['title'];
-                $footer_youtube_target = $footer_youtube['target'] ? $footer_youtube['target'] : '_self';
+            $footer_instagram = get_field('instagram', 'option');
+            if ($footer_instagram) :
+                $footer_instagram_link = $footer_instagram['url'];
+                $footer_instagram_title = $footer_instagram['title'];
+                $footer_instagram_target = $footer_instagram['target'] ? $footer_instagram['target'] : '_self';
             ?>
-                <a href="<?php echo esc_url($footer_youtube_link); ?>" target="<?php echo esc_attr($footer_youtube_target); ?>" class="w-fit">
-                    <?php echo esc_html($footer_youtube_title); ?>
+                <a href="<?php echo esc_url($footer_instagram_link); ?>" target="<?php echo esc_attr($footer_instagram_target); ?>" class="w-fit">
+                    <?php echo esc_html($footer_instagram_title); ?>
+                </a>
+            <?php endif;
+            $footer_telefono = get_field('telefono_footer', 'option');
+            if ($footer_telefono) :
+                $footer_telefono_link = $footer_telefono['url'];
+                $footer_telefono_title = $footer_telefono['title'];
+                $footer_telefono_target = $footer_telefono['target'] ? $footer_telefono['target'] : '_self';
+            ?>
+                <a href="<?php echo esc_url($footer_telefono_link); ?>" target="<?php echo esc_attr($footer_telefono_target); ?>" class="w-fit">
+                    <?php echo esc_html($footer_telefono_title); ?>
+                </a>
+            <?php endif; 
+            $footer_email = get_field('email_footer', 'option');
+            if ($footer_email) :
+                $footer_email_link = $footer_email['url'];
+                $footer_email_title = $footer_email['title'];
+                $footer_email_target = $footer_email['target'] ? $footer_email['target'] : '_self';
+            ?>
+                <a href="<?php echo esc_url($footer_email_link); ?>" target="<?php echo esc_attr($footer_email_target); ?>" class="w-fit">
+                    <?php echo esc_html($footer_email_title); ?>
                 </a>
             <?php endif;
             $footer_indirizzo = get_field('indirizzo', 'option');
