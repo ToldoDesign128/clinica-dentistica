@@ -186,8 +186,8 @@
             <?php if ($custom_loop->have_posts()) : while ($custom_loop->have_posts()) : $custom_loop->the_post(); ?>
 
                     <div class="swiper-slide">
-                        <p class="xl:text-3xl border-b border-blue-500 pb-4"><?php echo wp_kses_post(get_field('testo_recensione')); ?></p>
-                        <p class="xl:text-xl text-right font-bold py-4"><?php echo esc_html(get_field('nome_e_cognome')); ?></p>
+                        <p class="xl:text-2xl text-xl border-b border-blue-500 pb-4"><?php echo wp_kses_post(get_field('testo_recensione')); ?></p>
+                        <p class="xl:text-xl text-lg text-right font-bold py-4"><?php echo esc_html(get_field('nome_e_cognome')); ?></p>
                     </div>
                     <?php wp_reset_postdata(); ?>
             <?php endwhile;
