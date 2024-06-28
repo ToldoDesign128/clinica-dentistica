@@ -1431,6 +1431,10 @@ header .open-menu.menu-mobile {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
+  .xl\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 @media (min-width: 1920px) {
   .\33xl\:w-2\/5 {

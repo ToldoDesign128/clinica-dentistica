@@ -142,7 +142,7 @@
 
             <?php if ($custom_loop->have_posts()) : while ($custom_loop->have_posts()) : $custom_loop->the_post(); ?>
                     <article class="swiper-slide md:max-h-[600px] max-h-full bg-blue-800 text-blue-100 overflow-clip rounded-lg">
-                        <h3 class="xl:text-3xl md:text-2xl text-xl leading-tight text-blue-50 py-12 px-6"><?php the_title(); ?></h3>
+                        <h3 class="xl:text-2xl text-xl leading-tight text-blue-50 py-12 px-6"><?php the_title(); ?></h3>
                         <div class="pb-12 px-6"><?php the_field('testo_servizi'); ?></div>
                         <?php
                         $image_servizi = get_field('immagine_servizi');
