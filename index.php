@@ -2,7 +2,7 @@
 <!-- Hero -->
 <section id="hero" class="h-screen">
     <div class="h-full flex lg:flex-row flex-col bg-gradient-to-r from-blue-100 to-blue-400 overflow-clip relative">
-        <div class="h-full 3xl:w-2/5 lg:w-1/2 w-full flex flex-col flex-wrap self-center justify-center lg:bg-transparent bg-[rgba(255,255,255,0.5)] lg:mt-20 mt-12 lg:py-24 py-12 px-6 z-10">
+        <div class="h-full 3xl:w-2/5 lg:w-1/2 w-full flex flex-col flex-wrap self-center justify-center lg:bg-transparent bg-[#ffffff80] lg:mt-20 mt-12 lg:py-24 py-12 px-6 z-10">
             <h1 class="w-full uppercase text-blue-800"><?php echo esc_html(get_field('titolo_hero')); ?></h1>
             <h2 class="w-full mt-6"><?php echo esc_html(get_field('sottotitolo_hero')); ?></h2>
             <a class="hero-buttom w-fit flex flex-row justify-between items-center mt-8 px-6 py-2 bg-blue-800 text-white rounded-full lg:text-lg text-sm uppercase" href="#ilCentro">Scopri il nuovo Centro <img class="h-5 w-auto pl-8" src="<?php echo get_template_directory_uri() . '/assets/image/icon/arrow-down.svg'; ?>" alt=""></a>
