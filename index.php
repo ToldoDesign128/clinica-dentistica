@@ -193,7 +193,7 @@
             <?php if ($custom_loop->have_posts()) : while ($custom_loop->have_posts()) : $custom_loop->the_post(); ?>
                     <article class="bg-blue-200 text-blue-900 overflow-clip rounded-xl px-6">
                         <div class="text-2xl py-12"><?php the_field('testo_caso'); ?></div>
-                        <div class="overflow-clip py-12 rounded-xl">
+                        <div class="overflow-clip mb-12 rounded-xl">
                             <?php
                             $foto_1_casi = get_field('foto_1_casi');
                             if (!empty($foto_1_casi)) : ?>
