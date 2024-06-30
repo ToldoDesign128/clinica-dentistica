@@ -11,7 +11,7 @@ const swiperQuote = new Swiper('.swiperQuote', {
     slidesPerView: 1,
     spaceBetween: 30,
     autoplay: {
-    delay: 3000,
+    delay: 8000,
   },
     loop: true,
 
