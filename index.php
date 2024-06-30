@@ -191,18 +191,18 @@
             )); ?>
 
             <?php if ($custom_loop->have_posts()) : while ($custom_loop->have_posts()) : $custom_loop->the_post(); ?>
-                    <article class="bg-blue-400 text-blue-800 overflow-clip rounded-xl px-6">
-                        <div class="text-xl py-12"><?php the_field('testo_caso'); ?></div>
-                        <div class="overflow-clip rounded-xl">
+                    <article class="bg-blue-200 text-blue-900 overflow-clip rounded-xl px-6">
+                        <div class="text-2xl py-12"><?php the_field('testo_caso'); ?></div>
+                        <div class="overflow-clip py-12 rounded-xl">
                             <?php
                             $foto_1_casi = get_field('foto_1_casi');
                             if (!empty($foto_1_casi)) : ?>
-                                <img class="w-full object-cover" src="<?php echo esc_url($foto_1_casi['url']); ?>" alt="<?php echo esc_attr($foto_1_casi['alt']); ?>" />
+                                <img class="w-full aspect-video object-cover" src="<?php echo esc_url($foto_1_casi['url']); ?>" alt="<?php echo esc_attr($foto_1_casi['alt']); ?>" />
                             <?php endif; ?>
                             <?php
                             $foto_2_casi = get_field('foto_2_casi');
                             if (!empty($foto_2_casi)) : ?>
-                                <img class="w-full object-cover" src="<?php echo esc_url($foto_2_casi['url']); ?>" alt="<?php echo esc_attr($foto_2_casi['alt']); ?>" />
+                                <img class="w-full aspect-video object-cover" src="<?php echo esc_url($foto_2_casi['url']); ?>" alt="<?php echo esc_attr($foto_2_casi['alt']); ?>" />
                             <?php endif; ?>
                         </div>
                     </article>
