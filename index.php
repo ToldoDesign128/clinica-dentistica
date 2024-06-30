@@ -172,7 +172,7 @@
 </section>
 
 <!-- Casi Clinici -->
-<section id="casiClinici" class="lg:pt-12 pt-20 px-6">
+<section id="casiClinici" class="lg:pt-32 pt-20 px-6">
     <div class="flex flex-row w-full py-12">
         <h3 class="w-fit h-fit relative uppercase xl:text-6xl md:text-4xl text-2xl">
             Casi Clinici
@@ -192,7 +192,7 @@
 
             <?php if ($custom_loop->have_posts()) : while ($custom_loop->have_posts()) : $custom_loop->the_post(); ?>
                     <article class="bg-blue-200 text-blue-900 overflow-clip rounded-xl px-6">
-                        <div class="text-2xl py-12"><?php the_field('testo_caso'); ?></div>
+                        <div class="text-2xl font-semibold py-12"><?php the_field('testo_caso'); ?></div>
                         <div class="overflow-clip mb-6 rounded-lg">
                             <?php
                             $foto_1_casi = get_field('foto_1_casi');
