@@ -47,8 +47,7 @@
     </div>
     <div class="flex lg:flex-row flex-col justify-between bg-blue-700 text-blue-100 mx-6 lg:p-12 p-6 rounded-lg">
         <div class="xl:w-2/5 lg:w-1/2 w-full">
-            <div class="w-full lg:text-lg text-base"><?php the_field('testo_4_chi_siamo'); ?></div>
-            <div class="w-full lg:text-lg text-base pt-6 "><?php the_field('testo_5_chi_siamo'); ?></div>
+            <div class="w-full lg:text-xl text-lg pt-6 "><?php the_field('testo_5_chi_siamo'); ?></div>
         </div>
         <div class="lg:w-1/2 w-full lg:pl-6 pl-0 lg:pt-0 pt-8">
             <p class="w-full lg:text-2xl text-xl font-semibold"><?php echo esc_html(get_field('testo_6_chi_siamo')); ?></p>
@@ -173,6 +172,45 @@
 </section>
 
 <!-- Casi Clinici -->
+<section id="casiClinici" class="lg:pt-12 pt-20 px-6">
+    <div class="flex flex-row w-full py-12">
+        <h3 class="w-fit h-fit relative uppercase xl:text-6xl md:text-4xl text-2xl">
+            Casi Clinici
+            <span class="w-full absolute bottom-[-2px] left-0 h-4 bg-blue-300 -z-10"></span>
+        </h3>
+    </div>
+    <div class="grid gap-4 md:grid-cols-2 grid-cols-1">
+
+            <?php /* Custom Loop */
+
+            $custom_loop = new WP_Query(array(
+                'post_type'     => 'casi',
+                'posts_per_page' => 999,
+                'orderby'        => 'menu_order',
+                'order'          => 'ASC',
+            )); ?>
+
+            <?php if ($custom_loop->have_posts()) : while ($custom_loop->have_posts()) : $custom_loop->the_post(); ?>
+                    <article class="bg-blue-400 text-blue-800 overflow-clip rounded-xl px-6">
+                        <div class="text-xl py-12"><?php the_field('testo_caso'); ?></div>
+                        <div class="overflow-clip rounded-xl">
+                            <?php
+                            $foto_1_casi = get_field('foto_1_casi');
+                            if (!empty($foto_1_casi)) : ?>
+                                <img class="w-full object-cover" src="<?php echo esc_url($foto_1_casi['url']); ?>" alt="<?php echo esc_attr($foto_1_casi['alt']); ?>" />
+                            <?php endif; ?>
+                            <?php
+                            $foto_2_casi = get_field('foto_2_casi');
+                            if (!empty($foto_2_casi)) : ?>
+                                <img class="w-full object-cover" src="<?php echo esc_url($foto_2_casi['url']); ?>" alt="<?php echo esc_attr($foto_2_casi['alt']); ?>" />
+                            <?php endif; ?>
+                        </div>
+                    </article>
+                    <?php wp_reset_postdata(); ?>
+            <?php endwhile;
+            endif; ?>
+    </div>
+</section>
 
 <!-- Testimonianze -->
 <section id="testimonianze" class="pt-32 mb-24 flex flex-row flex-wrap">
