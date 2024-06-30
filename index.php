@@ -10,7 +10,17 @@
         <?php
         $image_hero = get_field('sfondo_hero');
         if (!empty($image_hero)) : ?>
-            <img class="absolute t-0 l-0 w-full h-full object-cover z-0" src="<?php echo esc_url($image_hero['url']); ?>" alt="<?php echo esc_attr($image_hero['alt']); ?>" />
+            <img class="absolute lg:block md:hidden hidden t-0 l-0 w-full h-full object-cover z-0" src="<?php echo esc_url($image_hero['url']); ?>" alt="<?php echo esc_attr($image_hero['alt']); ?>" />
+        <?php endif; ?>
+        <?php
+        $image_hero_tablet = get_field('sfondo_hero_tablet');
+        if (!empty($image_hero_tablet)) : ?>
+            <img class="absolute lg:hidden md:block hidden t-0 l-0 w-full h-full object-cover z-0" src="<?php echo esc_url($image_hero_tablet['url']); ?>" alt="<?php echo esc_attr($image_hero_tablet['alt']); ?>" />
+        <?php endif; ?>
+        <?php
+        $image_hero_mobile = get_field('sfondo_hero_mobile');
+        if (!empty($image_hero_mobile)) : ?>
+            <img class="absolute lg:hidden md:hidden block t-0 l-0 w-full h-full object-cover z-0" src="<?php echo esc_url($image_hero_mobile['url']); ?>" alt="<?php echo esc_attr($image_hero_mobile['alt']); ?>" />
         <?php endif; ?>
     </div>
 </section>
