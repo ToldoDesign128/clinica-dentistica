@@ -93,7 +93,7 @@ if ($footer_whatsapp) :
                     <?php echo esc_html($footer_cookie_policy_title); ?>
                 </a>
             <?php endif; ?>
-            <p class="w-full xl:text-right text-center text-sm">Centro Odontoiatrico La Rosa STP SRL dir sanitario Dott Giuseppe La Rosa<br>Tutti i diritti sono riservati.</p>
+            <p class="w-full max-w-[30ch] xl:text-right text-center text-sm">Centro Odontoiatrico La Rosa STP SRL dir sanitario Dott Giuseppe La Rosa<br>Tutti i diritti sono riservati.</p>
         </div>
 
     </div>
