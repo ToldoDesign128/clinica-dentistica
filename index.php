@@ -221,7 +221,7 @@
         </p>
     </div>
     <!-- Quote block -->
-    <div class="swiperQuote w-full overflow-x-clip px-6 py-4">
+    <div class="swiperQuote w-full overflow-x-clip px-6 py-8">
         <ul class="swiper-wrapper h-auto">
             <?php
             $custom_loop = new WP_Query(array(
