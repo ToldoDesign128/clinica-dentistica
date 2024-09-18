@@ -213,15 +213,15 @@
 </section>
 
 <!-- Testimonianze -->
-<section id="testimonianze" class="pt-32 mb-24 flex flex-row flex-wrap">
-    <div class="xl:w-1/3 md:w-1/2 w-full px-6 py-4">
+<section id="testimonianze" class="pt-32 mb-24">
+    <div class="w-full px-6 py-4">
         <p class="w-fit h-fit relative uppercase xl:text-4xl md:text-3xl text-2xl">
             Cosa dicono di noi
             <span class="w-full absolute bottom-[-2px] left-0 h-4 bg-blue-300 -z-10"></span>
         </p>
     </div>
     <!-- Quote block -->
-    <div class="swiperQuote xl:w-2/3 md:w-1/2 w-full overflow-x-clip px-6 py-4">
+    <div class="swiperQuote w-full overflow-x-clip px-6 py-4">
         <ul class="swiper-wrapper h-auto">
             <?php
             $custom_loop = new WP_Query(array(
